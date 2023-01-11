@@ -1,0 +1,53 @@
+{% extends 'main/sample.html' %}
+
+{% block title  %}Вход{% endblock %}
+
+{% load crispy_forms_tags  %}
+
+{% block content  %}
+    <h1>Личный кабинет</h1>
+    <br>
+    <div class="clients_menu">
+      <div class="Service">
+          <h2>Мои заказы</h2>
+          <br>
+          <p id="mysale">У Вас еще нет заказов, но Вы всегда можете сделать новый
+          <br><br>
+          <button class="btn btn-outline-success" type="submit"><a href="{% url 'login' %}">Оформить заказ</a></button></p>
+      </div>
+      <div class="dropdown">
+          <h2>Мои данные</h2>
+          <p id="mydata">
+              Фамилия - {{user.last_name}}<br>
+              Имя - {{user.first_name}}<br>
+              Username - {{user.username}}<br>
+              Email - {{user.email}}
+          </p>
+          <button onclick="openForm()" class="btn btn-outline-success" type="submit" id="openF">Изменить данные?</button>
+              <div id="myDropdown" class="dropdown-content">
+                  <form method="post">
+                      {% csrf_token %}
+                      {{ form.last_name|as_crispy_field }}
+                      {{ form.first_name|as_crispy_field }}
+                      {{ form.username|as_crispy_field }}
+                      {{ form.email|as_crispy_field }}
+                      <p class="log_in" id="btns"><button class="btn btn-outline-success" type="submit">Сохранить изменения</button>
+                          <button type="button" class="btn btn-outline-success" onclick="closeForm()">Закрыть</button></p>
+                  </form>
+              </div>
+      </div>
+      <div class="Service">
+          <h2 class="sale">Акциии</h2>
+          <br>
+          <p id="mysale">Нет новых акций</p>
+      </div>
+    </div>
+    <script>
+    function openForm() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    function closeForm() {
+        document.getElementById("myDropdown").style.display = "none";
+    }
+    </script>
+{% endblock %}

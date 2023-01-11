@@ -1,0 +1,58 @@
+{% extends 'main/sample.html' %}
+
+{% block title  %}VIP 6{% endblock %}
+
+{% block content  %}
+    <h1>Банный комплекс VIP 6</h1>
+        <div>
+            <p>Уютный банный комплекс из русской бани, которая топится исключительно березовыми дровами, и финской сауны.</p>
+                <h2>В комплексе находится:</h2>
+                    <li>Русская баня</li>
+                    <li>Финская сауна - оплачивается дополнительно 300 р/час</li>
+                    <li>Бассейн 2,5х5м</li>
+                    <li>Русский бильярд</li>
+                    <li>Гостевая комната с обеденной зоной, теле-радио аппаратурой</li>
+                    <li>Место для отдыха - кожаный диван</li>
+                    <li>Душевая кабина</li>
+                    <li>Комната релакса</li>
+                    <li>Бесплатный Wi-Fi</li><br>
+                    <p>Комплекс имеет вместимость от 6-ти до 15-ти человек. Доплата за каждого человека свыше 6-ти — 200 рублей в час.</p>
+                    <p>Минимальное время пребывания в бане: будние - 2 часа, выходные - 3 часа.</p>
+        </div>
+        <div>
+            <h2>Стоимость понедельник — четверг</h2>
+            <p1>1000 руб/час</p1>
+            <h2>Стоимость пятница — воскресенье</h2>
+            <p1>1300 руб/час</p1>
+        </div>
+        <button class="open-button" onclick="openForm()">Забронировать</button>
+        <div class="form-popup" id="myForm">
+            <form method="post">
+                {% csrf_token %} <br>
+                {{ form.Surname }} <br>
+                {{ form.Name }} <br>
+                {{ form.Mid_Name }} <br>
+                {{ form.Number }} <br>
+                {{ form.Email }} <br>
+                {{ form.Date }} <br>
+                {{ form.Time_range }} <br>
+                {{ form.Type_of_Service }} <br>
+                <span>{{ error }}</span>
+                <button class="btn btn-success" type="submit">Забронировать</button>
+                <button type="button" class="btn btn-success" onclick="closeForm()">Закрыть</button>
+            </form>
+        </div>
+        <script>
+                function openForm() {
+                  document.getElementById("myForm").style.display = "block";
+                  document.getElementById("myForm").style.position = "fixed";
+                  document.getElementById("myForm").style.marginLeft = "30%";
+                  document.getElementById("myForm").style.marginBottom = "10%";
+                }
+
+                function closeForm() {
+                  document.getElementById("myForm").style.display = "none";
+                }
+        </script>
+
+{% endblock %}

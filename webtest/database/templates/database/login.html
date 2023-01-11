@@ -1,0 +1,23 @@
+{% extends 'main/sample.html' %}
+
+{% block title  %}Вход{% endblock %}
+
+{% load crispy_forms_tags  %}
+
+{% block content  %}
+    <div class="login">
+        <h1>Авторизация</h1><br>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <p class="log_in"><button class="btn btn-outline-success" type="submit">Войти</button>
+            Еще не зарегистрированы?<button class="btn btn-outline-success" type="submit"><a href="{% url 'regist' %}">Регистрация</a></button></p>
+        </form>
+<!--        <div class="clients_menu">-->
+<!--            <h2>Новый заказ</h2>-->
+<!--            <h2>Мои заказы</h2>-->
+<!--            <h2>Мои данные</h2>-->
+<!--            <h2 class="sale">Акциии</h2>-->
+<!--        </div>-->
+    </div>
+{% endblock %}

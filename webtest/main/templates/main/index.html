@@ -1,0 +1,92 @@
+{% extends 'main/sample.html' %}
+
+{% block title  %}Главная страница{% endblock %}
+
+{% block content  %}
+    <h1>Оздоровительный комплекс LUXOR предлагает</h1>
+    <div class="grid-item grid-item3">
+            <div class="hover-text-one">
+                <a href="{% url 'Service1' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv1_2_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 1</h3>
+                    <p>Русская баня, Финская сауна, Бассейн, Русский бильярд</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service2' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv2_2_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service3' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv3_2_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service4' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv4_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 4</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service5' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv5_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 5</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service6' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv6_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 6</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service7' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv7_1.jpg">
+                        <figcaption>
+                    <h3>Комплекс VIP 7</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service5' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv5_1.jpg">
+                        <figcaption>
+                    <h3>Мангальная зона</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+                <a href="{% url 'Service6' %}">
+                <figure class="effect-text-four">
+                    <img src="static/main/imj/serv6_1.jpg">
+                        <figcaption>
+                    <h3>Гостиничные номера</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </figcaption>
+                </figure>
+                </a>
+            </div>
+    </div>
+{% endblock %}
